@@ -13,3 +13,19 @@ H:\My Documents\Visual Studio 2010\Projects\client\client\obj\x64\Debug\client.K
 H:\My Documents\Visual Studio 2010\Projects\client\client\obj\x64\Debug\client.listApp.resources
 H:\My Documents\Visual Studio 2010\Projects\client\client\obj\x64\Debug\client.process.resources
 H:\My Documents\Visual Studio 2010\Projects\client\client\obj\x64\Debug\client.Start.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\bin\x64\Debug\client.exe
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\bin\x64\Debug\client.pdb
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.csproj.AssemblyReference.cache
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.client.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.keylog.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.Kill.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.listApp.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.pic.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.process.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.Properties.Resources.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.registry.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.Start.resources
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.csproj.GenerateResource.cache
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.csproj.CoreCompileInputs.cache
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.exe
+D:\C++ repos\source\repos\Topic4-TeamView\client\client\obj\x64\Debug\client.pdb
