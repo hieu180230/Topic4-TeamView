@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #1e1e2f;
+  color: white;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.device {
+  padding: 10px;
+  background: #2a2a40;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.device:hover {
+  background: #3a3a55;
+}
+
+.device.active {
+  background: #4a6cf7;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: #4a6cf7;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: white;
+  border-top: 3px solid #4a6cf7;
+  font-weight: bold;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.card {
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+img.screenshot {
+  max-width: 100%;
+  border-radius: 8px;
+}

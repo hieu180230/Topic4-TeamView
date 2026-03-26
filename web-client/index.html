@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote Agent Controller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Connected Devices</h2>
+        <div id="deviceList"></div>
+    </div>
+
+    <div class="main">
+        <div class="header">Remote Agent Controll</div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="keylog">Keylog</div>
+            <div class="tab" data-tab="shutdown">Shutdown</div>
+            <div class="tab" data-tab="registry">Registry</div>
+            <div class="tab" data-tab="screenshot">Screenshot</div>
+            <div class="tab" data-tab="process">Processes</div>
+            <div class="tab" data-tab="app">Application</div>
+            
+        </div>
+
+        <div class="content">
+            <div id="keylog" class="panel active"></div>
+            <div id="shutdown" class="panel"></div>
+            <div id="registry" class="panel"></div>
+            <div id="screenshot" class="panel"></div>
+            <div id="process" class="panel"></div>
+            <div id="app" class="panel"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
