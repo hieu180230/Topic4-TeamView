@@ -1,0 +1,14 @@
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\bin\Debug\net10.0\socket-server.exe
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\bin\Debug\net10.0\socket-server.deps.json
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\bin\Debug\net10.0\socket-server.runtimeconfig.json
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\bin\Debug\net10.0\socket-server.dll
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\bin\Debug\net10.0\socket-server.pdb
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.GeneratedMSBuildEditorConfig.editorconfig
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.AssemblyInfoInputs.cache
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.AssemblyInfo.cs
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.csproj.CoreCompileInputs.cache
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.dll
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\refint\socket-server.dll
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.pdb
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\socket-server.genruntimeconfig.cache
+D:\hoc\cdtnmmt\topic4\socket-server\socket-server\obj\Debug\net10.0\ref\socket-server.dll
