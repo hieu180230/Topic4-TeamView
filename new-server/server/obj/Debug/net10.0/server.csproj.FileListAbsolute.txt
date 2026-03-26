@@ -1,0 +1,14 @@
+D:\hoc\cdtnmmt\topic4\server\server\bin\Debug\net10.0\server.exe
+D:\hoc\cdtnmmt\topic4\server\server\bin\Debug\net10.0\server.deps.json
+D:\hoc\cdtnmmt\topic4\server\server\bin\Debug\net10.0\server.runtimeconfig.json
+D:\hoc\cdtnmmt\topic4\server\server\bin\Debug\net10.0\server.dll
+D:\hoc\cdtnmmt\topic4\server\server\bin\Debug\net10.0\server.pdb
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.GeneratedMSBuildEditorConfig.editorconfig
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.AssemblyInfoInputs.cache
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.AssemblyInfo.cs
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.csproj.CoreCompileInputs.cache
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.dll
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\refint\server.dll
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.pdb
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\server.genruntimeconfig.cache
+D:\hoc\cdtnmmt\topic4\server\server\obj\Debug\net10.0\ref\server.dll
