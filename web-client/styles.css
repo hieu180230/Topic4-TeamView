@@ -83,6 +83,13 @@ body {
   display: none;
 }
 
+.panel button {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
 .panel.active {
   display: block;
 }
@@ -98,4 +105,54 @@ body {
 img.screenshot {
   max-width: 100%;
   border-radius: 8px;
+}
+
+.process-table, .app-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.process-table th, .process-table td, .app-table th, .app-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.process-table th, .app-table th {
+    background-color: #f5f5f5;
+}
+
+.process-table tr:hover, .app-table tr:hover {
+    background-color: #eee;
+}
+
+.btn-controll button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    margin-right: 20px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-controll button:hover {
+    background: #357abd;
+}
+
+.btn-controll input {
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #2b2b3d;
+    color: #fff;
+    outline: none;
+}
+
+#process-msg, #app-msg {
+  color: red;
+  margin-bottom: 20px;
+  font-size: 17px;
 }

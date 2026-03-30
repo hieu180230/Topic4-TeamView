@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\socket-server.csproj": {}
+    "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\socket-server.csproj": {}
   },
   "projects": {
-    "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\socket-server.csproj": {
+    "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\socket-server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\socket-server.csproj",
+        "projectUniqueName": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\socket-server.csproj",
         "projectName": "socket-server",
-        "projectPath": "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\socket-server.csproj",
+        "projectPath": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\socket-server.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\obj\\",
+        "outputPath": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

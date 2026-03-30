@@ -1,19 +1,24 @@
 ﻿//using System;
-using System.Text;
-//using System.Threading;
-//using System.Threading.Tasks;
-using System.Net.WebSockets;
-using System.Text.Json;
 //using System.Diagnostics;
 //using System.Drawing;
 //using System.Drawing.Imaging;
 //using System.IO;
-using KeyLogger;
+//using KeyLogger;
+using System.Diagnostics;
+//using System.DirectoryServices.ActiveDirectory;
+
+//using System.Threading;
+//using System.Threading.Tasks;
+using System.Net.WebSockets;
+using System.Text;
+using System.Text.Json;
+//using System.Xml.Linq;
+//using static System.Net.Mime.MediaTypeNames;
 
 class Program
 {
     static ClientWebSocket ws = new ClientWebSocket();
-    static KeylogController kl = new KeylogController();
+    //static KeylogController kl = new KeylogController();
 
     static async Task Main(string[] args)
     {
@@ -71,38 +76,86 @@ class Program
         string from = root.GetProperty("from").GetString();
         string command = root.GetProperty("command").GetString().ToUpper();
 
-        Console.WriteLine("Command: " + command);
-
+        //// ================= NORMAL COMMAND =================
         switch (command)
         {
-            case "HOOK":
-                kl.Hook();
+            case "KEYLOG":
+                //keylog();
                 break;
 
-            case "UNHOOK":
-                kl.Unhook();
+            case "SCREENSHOT":
+                //screenshot();
                 break;
 
-            case "PRINT":
-                kl.PrintKeys();
+            case "REGISTRY":
+                //registry();
                 break;
 
-            case "QUIT":
-                kl.Stop();
+            case "PROCESS-LIST":
+                listProcess(from);
                 break;
 
-            case "PROCESS":
-                // list process
+            case "PROCESS-KILL":
+                string pid = root.GetProperty("pid").GetString();
+                sendText(from, command.ToLower(), killProcess(pid));
                 break;
 
-            case "APPLICATION":
-                // list application
+            case "PROCESS-START":
+                string pn = root.GetProperty("pn").GetString();
+                sendText(from, command.ToLower(), startProcess(pn));
+                break;
+
+            case "APP-LIST":
+                listApp(from);
+                break;
+
+            case "APP-KILL":
+                string aid = root.GetProperty("aid").GetString();
+                sendText(from, command.ToLower(), killApp(aid));
+                break;
+
+            case "APP-START":
+                string an = root.GetProperty("an").GetString();
+                sendText(from, command.ToLower(), startApp(an));
                 break;
 
             case "SHUTDOWN":
                 shutdown();
                 break;
+
+            default:
+                return;
         }
+
+        // ================= KEYLOG MODE =================
+        //if (keylogMode)
+        //{
+        //    switch (command)
+        //    {
+        //        case "HOOK":
+        //            kl.Hook();
+        //            Console.WriteLine("Enter keylog mode");
+        //            break;
+
+        //        case "UNHOOK":
+        //            kl.Unhook();
+        //            break;
+
+        //        case "PRINT":
+        //            kl.PrintKeys();
+        //            break;
+
+        //        case "EXIT":
+        //            kl.Stop();
+        //            keylogMode = false;
+        //            Console.WriteLine("Exit keylog mode");
+        //            break;
+        //    }
+
+        //    return; // ⚠️ IMPORTANT: stop here
+        //}
+
+
     }
 
     // ================= SEND =================
@@ -117,46 +170,182 @@ class Program
             CancellationToken.None);
     }
 
-    //static async void SendText(string to, string text)
-    //{
-    //    string base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
+    static async void sendText(string target, string commands, string text)
+    {
+        //string base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
 
-    //    await Send(new
-    //    {
-    //        type = "response",
-    //        from = Environment.MachineName,
-    //        to = to,
-    //        data = base64
-    //    });
-    //}
+        await Send(new
+        {
+            type = "response",
+            from = Environment.MachineName,
+            to = target,
+            command = commands,
+            data = text
+        });
+    }
 
     //static async void SendImage(string to, byte[] data)
     //{
     //    string base64 = Convert.ToBase64String(data);
 
     //    await Send(new
-    //    {
-    //        type = "response",
-    //        from = Environment.MachineName,
-    //        to = to,
-    //        data = base64
-    //    });
+    //        {
+    //            type = "response",
+    //            from = Environment.MachineName,
+    //            to = to,
+    //            data = base64
+    //});
     //}
+
 
     //// ================= FEATURES =================
 
-    //static string GetProcesses()
-    //{
-    //    var processes = Process.GetProcesses();
-    //    StringBuilder sb = new StringBuilder();
+    static async void listProcess(string target)
+    {
+        var processes = getProcess();
 
-    //    foreach (var p in processes)
-    //    {
-    //        sb.AppendLine(p.ProcessName);
-    //    }
+        await Send(new
+        {
+            type = "response",
+            from = Environment.MachineName,
+            to = target,
+            data = processes
+        });
+    }
 
-    //    return sb.ToString();
-    //}
+    static object[][] getProcess()
+    {
+        var pr = Process.GetProcesses();
+        object[][] result = new object[pr.Length][];
+
+        for (int i = 0; i < pr.Length; i++)
+        {
+            result[i] = new object[]
+            {
+                pr[i].ProcessName,
+                pr[i].Id,
+                pr[i].Threads.Count
+            };
+        }
+
+        return result;
+    }
+
+    static string startProcess(string pn)
+    {
+        string processName = pn + ".exe";
+        try
+        {
+            Process.Start(processName);
+            return "Process started";
+        }
+        catch (Exception ex)
+        {
+            return "Some error happens";
+        }
+    }
+
+    static string killProcess(string pid)
+    {
+        var pr = Process.GetProcesses();
+        foreach (System.Diagnostics.Process p in pr)
+        {
+            if (p.Id.ToString() == pid)
+            {
+                try
+                {
+                    p.Kill();
+                    return "Process is killed";
+                }
+                catch (Exception ex)
+                {
+                    return "Some error happen";
+                }
+            }
+        }
+        return $"PID: {pid} is not exist";
+    }
+
+    static async void listApp(string target)
+    {
+        var apps = getApp();
+
+        await Send(new
+        {
+            type = "response",
+            from = Environment.MachineName,
+            to = target,
+            data = apps
+        });
+    }
+
+    static object[][] getApp()
+    {
+        var pr = Process.GetProcesses();
+        object[][] result = new object[pr.Length][];
+
+        bool flag = false;
+        int i = 0; 
+
+        foreach (System.Diagnostics.Process p in pr)
+        {
+            if (p.MainWindowTitle.Length > 0)
+            {
+                flag = true;
+            }
+
+            if (flag)
+            {
+                result[i] = new object[]
+                {
+                    p.ProcessName,
+                    p.Id,
+                    p.Threads.Count
+                };
+                i++;
+            }
+        }
+
+        return result;
+    }
+
+    static string startApp(string an)
+    {
+        string appName = an + ".exe";
+        try
+        {
+            Process.Start(appName);
+            return "Application started";
+        }
+        catch (Exception ex)
+        {
+            return "Some error happens";
+        }
+    }
+
+    static string killApp(string aid)
+    {
+        var pr = Process.GetProcesses();
+        foreach (System.Diagnostics.Process p in pr)
+        {
+            if (p.MainWindowTitle.Length > 0)
+            {
+                if (p.Id.ToString() == aid)
+                {
+                    try
+                    {
+                        p.Kill();
+                        return "Application is killed";
+                    }
+                    catch (Exception ex)
+                    {
+                        return "Some error happens";
+                    }
+                }
+            }
+        }
+        return $"Application with ID: {aid} is not exist";
+    }
 
     static void shutdown()
     {

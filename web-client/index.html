@@ -21,16 +21,62 @@
             <div class="tab" data-tab="screenshot">Screenshot</div>
             <div class="tab" data-tab="process">Processes</div>
             <div class="tab" data-tab="app">Application</div>
-            
         </div>
 
         <div class="content">
-            <div id="keylog" class="panel active"></div>
-            <div id="shutdown" class="panel"></div>
-            <div id="registry" class="panel"></div>
-            <div id="screenshot" class="panel"></div>
-            <div id="process" class="panel"></div>
-            <div id="app" class="panel"></div>
+            <div id="keylog" class="panel active">
+                <div class="btn-controll">
+                    <button data-command="HOOK">HOOK</button>
+                    <button data-command="UNHOOK">UNHOOK</button>
+                    <button data-command="PRINT">PRINT</button>
+                    <button data-command="EXIT">EXIT</button>
+                </div>
+                <div class="keylog-data"></div>
+            </div>
+            
+            <div id="shutdown" class="panel">
+                <div class="btn-controll">
+                    <button data-command="SHUTDOWN">SHUTDOWN</button>
+                </div>
+            </div>
+            
+            <div id="registry" class="panel">
+                <div class="btn-controll">
+                    <button data-command="SHUTDOWN">SHUTDOWN</button>
+                </div>
+            </div>
+
+            <div id="screenshot" class="panel">
+                <div class="btn-controll">
+                    <button data-command="TAKE">TAKE</button>
+                    <button data-command="SAVE">SAVE</button>
+                </div>
+                <div class="screenshot-data"></div>
+            </div>
+
+            <div id="process" class="panel">
+                <div class="btn-controll">
+                    <button data-command="PROCESS-LIST">LIST</button>
+                    <input type="text" placeholder="Enter Process ID" id="pid">
+                    <button data-command="PROCESS-KILL">KILL</button>
+                    <input type="text" placeholder="Enter Process Name" id="pn">
+                    <button data-command="PROCESS-START">START</button>
+                </div>
+                <p id="process-msg"></p>
+                <div class="process-data"></div>
+            </div>
+
+            <div id="app" class="panel">
+                <div class="btn-controll">
+                    <button data-command="APP-LIST">LIST</button>
+                    <input type="text" placeholder="Enter App ID" id="aid">
+                    <button data-command="APP-KILL">KILL</button>
+                    <input type="text" placeholder="Enter App Name" id="an">
+                    <button data-command="APP-START">START</button>
+                </div>
+                <p id="app-msg"></p>
+                <div class="app-data"></div>
+            </div>
         </div>
     </div>
 

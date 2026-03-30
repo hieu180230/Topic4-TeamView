@@ -1,0 +1,15 @@
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\server.exe
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\server.deps.json
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\server.runtimeconfig.json
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\server.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\server.pdb
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.GeneratedMSBuildEditorConfig.editorconfig
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.AssemblyInfoInputs.cache
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.AssemblyInfo.cs
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.csproj.CoreCompileInputs.cache
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.sourcelink.json
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\refint\server.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.pdb
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.genruntimeconfig.cache
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\ref\server.dll

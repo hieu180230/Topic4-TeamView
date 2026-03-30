@@ -1,12 +1,12 @@
-﻿using System;
+﻿//using System;
 using System.Net;
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 using System.Collections.Concurrent;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Linq;
+//using System.Threading;
+//using System.Threading.Tasks;
+//using System.Linq;
 
 class Program
 {
@@ -65,6 +65,7 @@ class Program
                     break;
 
                 var json = Encoding.UTF8.GetString(ms.ToArray());
+                Console.Write(json);
 
                 using JsonDocument doc = JsonDocument.Parse(json);
                 var root = doc.RootElement;

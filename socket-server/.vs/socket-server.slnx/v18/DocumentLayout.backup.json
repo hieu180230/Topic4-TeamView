@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\",
+  "WorkspaceRootPath": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0871239E-0E74-4F16-BD5C-7E95F9BFBBDB}|socket-server\\socket-server.csproj|d:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0871239E-0E74-4F16-BD5C-7E95F9BFBBDB}|socket-server\\socket-server.csproj|solutionrelative:socket-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7FE08EA-C795-2776-144F-55838EAE81DD}|socket-server\\socket-server.csproj|d:\\hoc\\cdtnmmt\\topic4\\git\\topic4-teamview\\socket-server\\socket-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7FE08EA-C795-2776-144F-55838EAE81DD}|socket-server\\socket-server.csproj|solutionrelative:socket-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\Program.cs",
+              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\Program.cs",
               "RelativeDocumentMoniker": "socket-server\\Program.cs",
-              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\socket-server\\socket-server\\Program.cs",
+              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\socket-server\\socket-server\\Program.cs",
               "RelativeToolTip": "socket-server\\Program.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAowJ4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowEAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-26T08:44:24.539Z",
               "EditorCaption": ""

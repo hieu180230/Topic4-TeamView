@@ -317,9 +317,7 @@ namespace server
                             {
                                 if (p.MainWindowTitle.Length > 0)
                                 {
-
                                     u = "ok";
-
                                 }
                                 Program.nw.WriteLine(u); Program.nw.Flush();
                                 if (u == "ok")
