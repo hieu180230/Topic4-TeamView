@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "bFD/8kgvc14=",
+  "dgSpecHash": "fA7Tn/hoZ5g=",
   "success": true,
   "projectFilePath": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\server.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\asus\\.nuget\\packages\\opencvsharp4\\4.13.0.20260330\\opencvsharp4.4.13.0.20260330.nupkg.sha512",
+    "C:\\Users\\asus\\.nuget\\packages\\opencvsharp4.runtime.win\\4.13.0.20260302\\opencvsharp4.runtime.win.4.13.0.20260302.nupkg.sha512"
+  ],
   "logs": []
 }

