@@ -133,7 +133,7 @@ function handleResponse(msg) {
             break;
 
         case "screenshot":
-            //renderScreenshotTab(data);
+            displayScreenshot(msg.data);
             break;
 
         case "process":
@@ -250,6 +250,22 @@ function renderAppTab(data) {
 
     container.innerHTML = html;
 }
+
+function displayScreenshot(img) {
+    let imgEle = document.getElementById("monitor-screen");
+    imgEle.src = "data:image/jpeg;base64," + img;
+    imgEle.style.width = "80%";
+    imgEle.style.transformOrigin = "top left"; // This is likely what you meant
+    imgEle.style.scale = "0.9";
+}
+
+document.getElementById("save-btn").addEventListener('click', () => {
+    let imgEle = document.getElementById("monitor-screen");
+    const link = document.createElement("a");
+    link.download = `screenshot_${new Date().getTime()}.jpg`;
+    link.href = imgEle.src;
+    link.click();
+})
 
 // ================= TAB SWITCH =================
 document.querySelectorAll(".tab").forEach(tab => {

