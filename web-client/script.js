@@ -1,5 +1,5 @@
-const ws = new WebSocket("ws://localhost:5000/ws");
-//const ws = new WebSocket('wss://abigail-conciliable-hyun.ngrok-free.dev/ws/');
+//const ws = new WebSocket("ws://localhost:5000/ws");
+const ws = new WebSocket('wss://abigail-conciliable-hyun.ngrok-free.dev/ws/');
 
 const clientName = "web-" + Math.floor(Math.random() * 1000);
 let selectedDevice = null;

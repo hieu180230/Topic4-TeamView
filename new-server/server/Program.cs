@@ -32,8 +32,8 @@ class Program
     {
         Console.WriteLine("Starting client...");
 
-        await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
-        //await ws.ConnectAsync(new Uri("wss://abigail-conciliable-hyun.ngrok-free.dev/ws/"), CancellationToken.None);
+        //await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
+        await ws.ConnectAsync(new Uri("wss://abigail-conciliable-hyun.ngrok-free.dev/ws/"), CancellationToken.None);
     
 
         // REGISTER
