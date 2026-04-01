@@ -13,14 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|server\\server.csproj|d:\\hoc\\cdtnmmt\\topic4\\git\\topic4-teamview\\new-server\\server\\keylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|server\\server.csproj|solutionrelative:server\\keylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|server\\server.csproj|d:\\hoc\\cdtnmmt\\topic4\\git\\topic4-teamview\\new-server\\server\\webcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|server\\server.csproj|solutionrelative:server\\webcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|server\\server.csproj|d:\\hoc\\cdtnmmt\\topic4\\git\\topic4-teamview\\new-server\\server\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|server\\server.csproj|solutionrelative:server\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,43 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "KeyLogController.cs",
-              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\KeyLogController.cs",
-              "RelativeDocumentMoniker": "server\\KeyLogController.cs",
-              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\KeyLogController.cs",
-              "RelativeToolTip": "server\\KeyLogController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Program.cs",
+              "RelativeDocumentMoniker": "server\\Program.cs",
+              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Program.cs",
+              "RelativeToolTip": "server\\Program.cs",
+              "ViewState": "AgIAAJUBAAAAAAAAAAAAAKoBAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T14:51:21.281Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Webcam.cs",
-              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Webcam.cs",
-              "RelativeDocumentMoniker": "server\\Webcam.cs",
-              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Webcam.cs",
-              "RelativeToolTip": "server\\Webcam.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA5wB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T14:49:51.675Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "server.csproj",
-              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\server.csproj",
-              "RelativeDocumentMoniker": "server\\server.csproj",
-              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\server.csproj",
-              "RelativeToolTip": "server\\server.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-30T14:43:20.009Z"
+              "WhenOpened": "2026-03-26T08:35:48.415Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,21 +45,22 @@
               "RelativeDocumentMoniker": "server\\Keylog.cs",
               "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Keylog.cs",
               "RelativeToolTip": "server\\Keylog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwDEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T09:20:56.871Z"
+              "WhenOpened": "2026-03-26T09:20:56.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Program.cs",
-              "RelativeDocumentMoniker": "server\\Program.cs",
-              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Program.cs",
-              "RelativeToolTip": "server\\Program.cs",
-              "ViewState": "AgIAAGcBAAAAAAAAAADwv6AAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "KeyLogController.cs",
+              "DocumentMoniker": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\KeyLogController.cs",
+              "RelativeDocumentMoniker": "server\\KeyLogController.cs",
+              "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\KeyLogController.cs",
+              "RelativeToolTip": "server\\KeyLogController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA5wCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T08:35:48.415Z",
+              "WhenOpened": "2026-03-30T14:51:21.281Z",
               "EditorCaption": ""
             }
           ]

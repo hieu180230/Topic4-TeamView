@@ -156,3 +156,8 @@ img.screenshot {
   margin-bottom: 20px;
   font-size: 17px;
 }
+
+#keylog-result {
+  font-size: 25px;
+  margin-top: 20px;
+}

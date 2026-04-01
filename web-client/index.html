@@ -15,8 +15,8 @@
         <div class="header">Remote Agent Controll</div>
 
         <div class="tabs">
-            <div class="tab active" data-tab="keylog">Keylog</div>
-            <div class="tab" data-tab="shutdown">Shutdown</div>
+            <div class="tab active" data-tab="shutdown">Shutdown</div>
+            <div class="tab" data-tab="keylog">Keylog</div>
             <div class="tab" data-tab="registry">Registry</div>
             <div class="tab" data-tab="screenshot">Screenshot</div>
             <div class="tab" data-tab="webcam">Webcam</div>
@@ -25,7 +25,14 @@
         </div>
 
         <div class="content">
-            <div id="keylog" class="panel active">
+            <div id="shutdown" class="panel active">
+                <div class="btn-controll">
+                    <button data-command="SHUTDOWN">SHUTDOWN</button>
+                    <button data-command="RESTART">RESTART</button>
+                </div>
+            </div>
+
+            <div id="keylog" class="panel">
                 <div class="btn-controll">
                     <button data-command="HOOK">HOOK</button>
                     <button data-command="UNHOOK">UNHOOK</button>
@@ -33,13 +40,7 @@
                     <button data-command="EXIT">EXIT</button>
                 </div>
                 <div class="keylog-data">
-                    <p id="keys-data"></p>
-                </div>
-            </div>
-            
-            <div id="shutdown" class="panel">
-                <div class="btn-controll">
-                    <button data-command="SHUTDOWN">SHUTDOWN</button>
+                    <p id="keylog-result"></p>
                 </div>
             </div>
             
