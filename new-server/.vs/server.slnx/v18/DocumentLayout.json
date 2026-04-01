@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "server\\Program.cs",
               "ToolTip": "D:\\hoc\\cdtnmmt\\topic4\\git\\Topic4-TeamView\\new-server\\server\\Program.cs",
               "RelativeToolTip": "server\\Program.cs",
-              "ViewState": "AgIAAJUBAAAAAAAAAAAAAKoBAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAKABAAAAAAAAAAAQwKwBAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-26T08:35:48.415Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "server\\Keylog.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAIwDEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T09:20:56.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-26T09:20:56.871Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "server\\KeyLogController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA5wCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T14:51:21.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T14:51:21.281Z"
             }
           ]
         }

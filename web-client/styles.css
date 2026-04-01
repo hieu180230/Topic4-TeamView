@@ -161,3 +161,10 @@ img.screenshot {
   font-size: 25px;
   margin-top: 20px;
 }
+
+#noti {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color:crimson;
+}

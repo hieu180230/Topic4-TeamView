@@ -45,7 +45,7 @@ namespace server
             if (link.IndexOf('\\') >= 0) 
             switch (link.Substring(0,link.IndexOf('\\')).ToUpper())
             {
-                case "HKEY_CLASSIES_ROOT": a = Registry.ClassesRoot; break;
+                case "HKEY_CLASSES_ROOT": a = Registry.ClassesRoot; break;
                 case "HKEY_CURRENT_USER": a = Registry.CurrentUser; break;
                 case "HKEY_LOCAL_MACHINE": a = Registry.LocalMachine; break;
                 case "HKEY_USERS": a = Registry.Users; break;
