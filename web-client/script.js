@@ -261,7 +261,7 @@ function displayScreenshot(img) {
     let imgEle = document.getElementById("monitor-screen");
     imgEle.src = "data:image/jpeg;base64," + img;
     imgEle.style.width = "80%";
-    imgEle.style.transformOrigin = "top left"; // This is likely what you meant
+    imgEle.style.transformOrigin = "top left";
     imgEle.style.scale = "0.9";
 }
 
@@ -281,7 +281,7 @@ function displayWebcam(img) {
     let imgEle = document.getElementById("webcam-screen");
     imgEle.src = "data:image/jpeg;base64," + img;
     imgEle.style.width = "80%";
-    imgEle.style.transformOrigin = "top left"; // This is likely what you meant
+    imgEle.style.transformOrigin = "top left";
     imgEle.style.scale = "0.9";
 }
 

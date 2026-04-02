@@ -168,3 +168,11 @@ img.screenshot {
   margin-bottom: 20px;
   color:crimson;
 }
+
+.instruction {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color:#4a6cf7;
+  font-style: italic;
+}
